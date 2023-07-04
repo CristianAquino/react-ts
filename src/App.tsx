@@ -1,34 +1,61 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 
 export default function App() {
-  const [startTime, setStartTime] = useState<number | null>(null);
-  const [now, setNow] = useState<number | null>(null);
-  const intervalRef = useRef<number>();
+  const itemsRef = useRef(null);
 
-  function handleStart() {
-    setStartTime(Date.now());
-    setNow(Date.now());
-
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setNow(Date.now());
-    }, 10);
+  function scrollToId(itemId: number) {
+    const map = getMap();
+    const node = map.get(itemId);
+    node.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+    console.log(map);
   }
 
-  function handleStop() {
-    clearInterval(intervalRef.current);
-  }
-
-  let secondsPassed = 0;
-  if (startTime != null && now != null) {
-    secondsPassed = (now - startTime) / 1000;
+  function getMap() {
+    if (!itemsRef.current) {
+      // Initialize the Map on first usage.
+      itemsRef.current = new Map();
+    }
+    return itemsRef.current;
   }
 
   return (
     <>
-      <h1>Tiempo transcurrido: {secondsPassed.toFixed(3)}</h1>
-      <button onClick={handleStart}>Iniciar</button>
-      <button onClick={handleStop}>Detener</button>
+      <nav>
+        <button onClick={() => scrollToId(0)}>Tom</button>
+        <button onClick={() => scrollToId(5)}>Maru</button>
+        <button onClick={() => scrollToId(9)}>Jellylorum</button>
+      </nav>
+      <div>
+        <ul>
+          {catList.map((cat) => (
+            <li
+              key={cat.id}
+              ref={(node) => {
+                const map = getMap();
+                if (node) {
+                  map.set(cat.id, node);
+                } else {
+                  map.delete(cat.id);
+                }
+              }}
+            >
+              <img src={cat.imageUrl} alt={"Cat #" + cat.id} />
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   );
+}
+
+const catList = [];
+for (let i = 0; i < 10; i++) {
+  catList.push({
+    id: i,
+    imageUrl: "https://placekitten.com/250/200?image=" + i,
+  });
 }
