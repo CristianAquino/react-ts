@@ -1,13 +1,20 @@
-import Hijo1 from "./Hijo1";
-import EdadProvider from "./edadContext";
+import { useRef } from "react";
 
 const App = () => {
+  // tipo mas especifico para un tag DIV
+  // si no estamos seguros de que es un DIV, usamos el tipo Element
+  const ref1 = useRef<HTMLDivElement>(null);
   return (
-    <div>
-      <EdadProvider>
-        <Hijo1 />
-      </EdadProvider>
-    </div>
+    <>
+      <div ref={ref1}>Div 1</div>
+      <button
+        onClick={() => {
+          if (ref1.current) ref1.current.style.backgroundColor = "red";
+        }}
+      >
+        Cambiar fondo 1
+      </button>
+    </>
   );
 };
 export default App;
