@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { User } from "./models";
 import List from "./List";
 
@@ -13,7 +13,12 @@ const App = () => {
   const [searc, setSearc] = useState("");
 
   const handleAdd = () => {
-    const newUser = { id: users[users.length - 1].id + 1, name: text };
+    let newUser;
+    if (users.length == 0) {
+      newUser = { id: 1, name: text };
+    } else {
+      newUser = { id: users[users.length - 1].id + 1, name: text };
+    }
     setusers([...users, newUser]);
   };
 
@@ -29,6 +34,31 @@ const App = () => {
     setSearc(text);
   };
 
+  // memorizamos en base a users ya que en cada proceso
+  // de eliminacion cambia
+  const handleDelete = useCallback(
+    (userId: number) => {
+      setusers(users.filter((user) => user.id !== userId));
+    },
+    [users]
+  );
+
+  /* si esta funcion lo ponemos en el array de dependencia,
+  por cada render del input aparecera el mensaje ocasionado
+  una redefinicion en cada render 
+  para que no ocurra eso usamos useCallback */
+  const printUsers = useCallback(() => {
+    console.log("change users", users);
+  }, [users]);
+
+  useEffect(() => {
+    console.log("render App");
+  });
+
+  useEffect(() => {
+    printUsers();
+  }, [users, printUsers]);
+
   return (
     <div>
       <input
@@ -38,7 +68,7 @@ const App = () => {
       />
       <button onClick={handleSearch}>Search</button>
       <button onClick={handleAdd}>Add</button>
-      <List users={filterUser} />
+      <List users={filterUser} handleDelete={handleDelete} />
     </div>
   );
 };
