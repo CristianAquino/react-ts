@@ -1,0 +1,21 @@
+.modal {
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.modal-open {
+  display: grid;
+}
+.modal__dialog {
+  background: #ddd;
+  padding: 10px;
+  width: 300px;
+  height: 400px;
+}
