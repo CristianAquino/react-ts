@@ -7,9 +7,13 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import { Logout } from "./components/Logout";
 import { Dashboard } from "./pages";
+import { AxiosInterceptor } from "./interceptors";
+import { Toaster } from "react-hot-toast";
 
 const Login = lazy(() => import("./pages/Login/Login"));
 const Private = lazy(() => import("./pages/Private/Private"));
+
+AxiosInterceptor();
 
 const App = () => {
   return (
@@ -17,6 +21,7 @@ const App = () => {
       <Suspense fallback={<h1>Loading...</h1>}>
         <Provider store={store}>
           <BrowserRouter>
+            <Toaster />
             <Logout />
             <RoutesWithNotFound>
               <Route
