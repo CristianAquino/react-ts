@@ -43,4 +43,7 @@ const useTimeAgo = (timestamp: string) => {
   };
 };
 
-export default useTimeAgo;
+export { useTimeAgo };
+// example implement
+// const fecha = "2020-08-07T00:00:00.000Z";
+// const { datetime, timeago } = useTimeAgo(fecha);
