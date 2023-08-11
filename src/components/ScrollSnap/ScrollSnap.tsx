@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useFetchaAndLoad } from "../../hooks";
 import { PicsumImageModel } from "../../models";
 import { getPicsumImage } from "../../services";
-import { ContentImage, Image } from "../../styles/ContentImage.style";
+import { CarrouselImage, ContentCarrouselImage, Image } from "../../styles";
 
 export type ScrollSnapProps = {};
 
@@ -20,12 +20,14 @@ const ScrollSnap: React.FC<ScrollSnapProps> = () => {
   }, []);
 
   return (
-    <ContentImage>
+    <ContentCarrouselImage>
       {loading && <h1>Loading..</h1>}
       {images.map((image) => (
-        <Image key={image.id} src={image.download_url} />
+        <CarrouselImage key={image.id}>
+          <Image src={image.download_url} />
+        </CarrouselImage>
       ))}
-    </ContentImage>
+    </ContentCarrouselImage>
   );
 };
 
