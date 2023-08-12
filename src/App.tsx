@@ -1,11 +1,21 @@
-import useTimeAgo from "./utils/timeAgo.utils";
+import { useEffect, useState } from "react";
+import { ComponentTestAsync } from "./components/ComponentTestAsync";
 
 const App = () => {
-  const fecha = "2020-08-07T00:00:00.000Z";
-  const { datetime, timeago } = useTimeAgo(fecha);
+  const [name, setName] = useState<string | null>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setName("Juan");
+    }, 4000);
+  }, []);
+
   return (
     <div>
-      {timeago}"-"{datetime}
+      {/* <ErrorBoundary fallbackComponent={<>NO ANDA!!</>} resetCondition={name}>
+        <ComponentTest name={name} />
+      </ErrorBoundary> */}
+      <ComponentTestAsync />
     </div>
   );
 };
