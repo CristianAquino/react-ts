@@ -1,5 +1,10 @@
 import { useState } from "react";
-import { PracticeHForm, ScrollSnap, StarRating } from "./components";
+import {
+  ComponentPolymorphic,
+  PracticeHForm,
+  ScrollSnap,
+  StarRating,
+} from "./components";
 import { AxiosInterceptor } from "./interceptors";
 import { Principal } from "./styles";
 
@@ -10,7 +15,10 @@ const App = () => {
     <Principal>
       {/* <ScrollSnap /> */}
       {/* <StarRating rating={score} setRating={setScore} /> */}
-      <PracticeHForm />
+      {/* <PracticeHForm /> */}
+      <ComponentPolymorphic variant="black" as={"section"}>
+        Hola
+      </ComponentPolymorphic>
     </Principal>
   );
 };
