@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   ComponentPolymorphic,
+  HOC,
   PracticeHForm,
   ScrollSnap,
   StarRating,
@@ -16,9 +17,10 @@ const App = () => {
       {/* <ScrollSnap /> */}
       {/* <StarRating rating={score} setRating={setScore} /> */}
       {/* <PracticeHForm /> */}
-      <ComponentPolymorphic variant="black" as={"section"}>
+      {/* <ComponentPolymorphic variant="black" as={"section"}>
         Hola
-      </ComponentPolymorphic>
+      </ComponentPolymorphic> */}
+      <HOC />
     </Principal>
   );
 };
