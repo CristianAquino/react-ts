@@ -67,8 +67,49 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+/* @font-face {
+  font-family: "heyComic";
+  src: url("./assets/fonts/HeyComic/HeyComic.ttf"),
+    url("./assets/fonts/HeyComic/HeyComic.otf");
+}
+@font-face {
+  font-family: "rosemary";
+  src: url("./assets/fonts/Rosemary4/Rosemary.otf");
+}
+@font-face {
+  font-family: "vlogger";
+  src: url("./assets/fonts/Vlogger2/Vlogger.otf");
+}
+@font-face {
+  font-family: "boldlyMissy";
+  src: url("./assets/fonts/BoldlyMissy/BoldlyMissy.otf");
+}
+@font-face {
+  font-family: "dirtyDuo";
+  src: url("./assets/fonts/DirtyDuo/dirtyduo.ttf"),
+    url("./assets/fonts/DirtyDuo/dirtyduo_bold.ttf"),
+    url("./assets/fonts/DirtyDuo/dirtyduo_italic.ttf"),
+    url("./assets/fonts/DirtyDuo/dirtyduo_bolditalic.ttf");
+}
+@font-face {
+  font-family: "postHuman";
+  src: url("./assets/fonts/PostHuman/posthuman.ttf");
+}
+@font-face {
+  font-family: "vampiress";
+  src: url("./assets/fonts/Vampiress/vampiress.ttf");
+} */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+/* p {
+  font-family: "heyComic";
+  font-family: "rosemary";
+  font-family: "vlogger";
+  font-family: "boldlyMissy";
+  font-family: "dirtyDuo";
+  font-family: "postHuman";
+  font-family: "vampiress";
+} */
