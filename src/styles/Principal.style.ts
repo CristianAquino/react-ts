@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const Principal = styled.div`
+const PrincipalContent = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: #262e31;
@@ -10,4 +10,9 @@ const Principal = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-export { Principal };
+const MainContent = styled.main`
+  max-width: 992px;
+  width: 100%;
+  height: 100%;
+`;
+export { PrincipalContent, MainContent };
