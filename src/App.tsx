@@ -1,15 +1,9 @@
-import { Suspense, lazy, useState } from "react";
-import {
-  ComponentPolymorphic,
-  HOC,
-  PracticeHForm,
-  ScrollSnap,
-  StarRating,
-} from "./components";
+import { lazy } from "react";
 import { AxiosInterceptor } from "./interceptors";
-import { Principal } from "./styles";
+import { MainContent, PrincipalContent } from "./styles";
 // import { FilterProducts } from "./pages";
-import { FiltersProvider } from "./context";
+import { UploadImageProvider } from "./context";
+import { UploadImage } from "./pages";
 const FilterProducts = lazy(
   () => import("./pages/FilterProducts/FilterProducts")
 );
@@ -21,7 +15,7 @@ const App = () => {
   // const [score, setScore] = useState(4);
 
   return (
-    <Principal>
+    <PrincipalContent>
       {/* <ScrollSnap /> */}
       {/* <StarRating rating={score} setRating={setScore} /> */}
       {/* <PracticeHForm /> */}
@@ -29,12 +23,17 @@ const App = () => {
         Hola
       </ComponentPolymorphic> */}
       {/* <HOC /> */}
-      <FiltersProvider>
+      {/* <FiltersProvider>
         <Suspense fallback={<div>Loading Page Filter Products...</div>}>
           <FilterProducts />
         </Suspense>
-      </FiltersProvider>
-    </Principal>
+      </FiltersProvider> */}
+      <MainContent>
+        <UploadImageProvider>
+          <UploadImage />
+        </UploadImageProvider>
+      </MainContent>
+    </PrincipalContent>
   );
 };
 export default App;
