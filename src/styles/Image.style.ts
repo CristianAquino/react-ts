@@ -2,8 +2,8 @@ import { styled } from "styled-components";
 
 const BoxImage = styled.div<{ boxWidth?: string; boxHeight?: string }>`
   position: relative;
-  width: ${(props) => props.boxWidth || "300px"};
-  height: ${(props) => props.boxHeight || "300px"};
+  width: ${(props) => props.boxWidth};
+  height: ${(props) => props.boxHeight};
 `;
 
 const Image = styled.img`
