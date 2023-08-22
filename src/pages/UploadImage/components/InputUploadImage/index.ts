@@ -1,0 +1,1 @@
+export { default as InputUploadImage } from './InputUploadImage';
