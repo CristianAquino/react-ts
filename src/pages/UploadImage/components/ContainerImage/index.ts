@@ -1,0 +1,1 @@
+export { default as ContainerImage } from './ContainerImage';
