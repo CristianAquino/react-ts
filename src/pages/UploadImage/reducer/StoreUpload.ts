@@ -11,7 +11,7 @@ const enum STORE_UPLOAD_TYPE {
 const uploadReducer = (state: File[], action: UploadImageReducer): File[] => {
   switch (action.type) {
     case STORE_UPLOAD_TYPE.ADDFILES: {
-      return [...state, ...action.payload];
+      return [...state, action.payload];
     }
     case STORE_UPLOAD_TYPE.DELETEFILE: {
       const filterDelete = state.filter(
