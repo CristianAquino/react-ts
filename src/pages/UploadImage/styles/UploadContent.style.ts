@@ -74,6 +74,9 @@ const TargetUpload = styled.div`
   border-radius: 8px;
   gap: 8px;
   cursor: pointer;
+  &.inDrag {
+    background-color: rgba(36, 142, 255, 0.25);
+  }
 `;
 const BodyUploadImage = styled.div`
   display: flex;
