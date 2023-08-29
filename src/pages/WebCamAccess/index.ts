@@ -1,0 +1,1 @@
+export { default as WebCamAccess } from './WebCamAccess';
