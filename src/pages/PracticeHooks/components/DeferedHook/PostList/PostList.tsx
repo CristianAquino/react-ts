@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getPostById } from "../../services";
+import { getPostById } from "../../../services";
 
 export type PostListProps = {
   id: string;
