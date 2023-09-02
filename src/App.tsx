@@ -3,11 +3,18 @@ import { AxiosInterceptor } from "./interceptors";
 import { MainContent, PrincipalContent } from "./styles";
 // import { FilterProducts } from "./pages";
 import { UploadImageProvider } from "./context";
-import { UploadImage } from "./pages";
+import {
+  CatFact,
+  PracticeHooks,
+  SearchMovies,
+  UploadImage,
+  WebCamAccess,
+} from "./pages";
 const FilterProducts = lazy(
   () => import("./pages/FilterProducts/FilterProducts")
 );
 // lazy(() => import("./components/Filters"));
+import { Toaster } from "react-hot-toast";
 
 AxiosInterceptor();
 
@@ -16,6 +23,7 @@ const App = () => {
 
   return (
     <PrincipalContent>
+      <Toaster />
       {/* <ScrollSnap /> */}
       {/* <StarRating rating={score} setRating={setScore} /> */}
       {/* <PracticeHForm /> */}
@@ -29,9 +37,13 @@ const App = () => {
         </Suspense>
       </FiltersProvider> */}
       <MainContent>
-        <UploadImageProvider>
+        {/* <UploadImageProvider>
           <UploadImage />
-        </UploadImageProvider>
+        </UploadImageProvider> */}
+        {/* <CatFact /> */}
+        {/* <WebCamAccess /> */}
+        {/* <SearchMovies /> */}
+        <PracticeHooks />
       </MainContent>
     </PrincipalContent>
   );
