@@ -67,7 +67,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
-/* @font-face {
+@font-face {
   font-family: "heyComic";
   src: url("./assets/fonts/HeyComic/HeyComic.ttf"),
     url("./assets/fonts/HeyComic/HeyComic.otf");
@@ -98,7 +98,35 @@ button:focus-visible {
 @font-face {
   font-family: "vampiress";
   src: url("./assets/fonts/Vampiress/vampiress.ttf");
-} */
+}
+@font-face {
+  font-family: "hadijah";
+  src: url("./assets/fonts/HadijahFont/HadijahFreeTrial-0Wqzv.ttf");
+}
+@font-face {
+  font-family: "romavich";
+  src: url("./assets/fonts/RomavichFont/RomavichRegular-z8wW1.ttf"),
+    url("./assets/fonts/RomavichFont/RomavichRegular-jE6Mv.otf");
+}
+@font-face {
+  font-family: "timesRoman";
+  src: url("./assets/fonts/TimesRoman/OPTITimes-Roman.otf"),
+    url("./assets/fonts/TimesRoman/OPTITimesRoman-Italic.otf");
+}
+@font-face {
+  font-family: "fancyCard";
+  src: url("./assets/fonts/FancyCard/FancyCardText.ttf");
+}
+@font-face {
+  font-family: "courtrai";
+  src: url("./assets/fonts/Courtrai/Courtrai.ttf");
+}
+@font-face {
+  font-family: "adlibitum";
+  src: url("./assets/fonts/Adlibitum/AdlibitumTRIAL.ttf"),
+    url("./assets/fonts/Adlibitum/Adlibitum_BoldTRIAL.ttf"),
+    url("./assets/fonts/Adlibitum/Adlibitum_LightTRIAL.ttf");
+}
 * {
   margin: 0;
   padding: 0;
