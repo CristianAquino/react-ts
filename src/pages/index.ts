@@ -6,3 +6,4 @@ export * from "./SearchMovies";
 export * from "./PracticeHooks";
 export * from "./ReactTweet";
 export * from "./PDF";
+export * from "./BillStripe";
