@@ -1,6 +1,6 @@
 import makima from "./assets/csm.webp";
 import bnha from "./assets/bnha.png";
-import "./assets/manejo.css";
+import { AnimationImage } from "./styled-components";
 
 export type MakimaProps = {};
 
@@ -14,17 +14,11 @@ const Makima = ({}: MakimaProps) => {
         position: "relative",
       }}
     >
-      <img
+      <AnimationImage
         src={makima}
         // src={bnha}
         alt="makima"
-        style={{
-          height: "100%",
-          objectFit: "cover",
-          position: "absolute",
-          top: "0",
-          left: "0",
-        }}
+        $steps={23}
       />
     </div>
   );
