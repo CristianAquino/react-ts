@@ -4,8 +4,11 @@ import { MainContent, PrincipalContent } from "./styles";
 // import { FilterProducts } from "./pages";
 import { UploadImageProvider } from "./context";
 import {
+  BillStripe,
   CatFact,
+  PDF,
   PracticeHooks,
+  ReactTweet,
   SearchMovies,
   UploadImage,
   WebCamAccess,
@@ -15,6 +18,8 @@ const FilterProducts = lazy(
 );
 // lazy(() => import("./components/Filters"));
 import { Toaster } from "react-hot-toast";
+// import { Makima, SliderNetflix } from "./components";
+import { Makima, SliderNetflix } from "./components";
 
 AxiosInterceptor();
 
@@ -43,7 +48,12 @@ const App = () => {
         {/* <CatFact /> */}
         {/* <WebCamAccess /> */}
         {/* <SearchMovies /> */}
-        <PracticeHooks />
+        {/* <PracticeHooks /> */}
+        {/* <ReactTweet url="https://twitter.com/realmadriden/status/1530664561078067200" /> */}
+        {/* <PDF /> */}
+        {/* <Makima /> */}
+        {/* <BillStripe /> */}
+        <SliderNetflix />
       </MainContent>
     </PrincipalContent>
   );
